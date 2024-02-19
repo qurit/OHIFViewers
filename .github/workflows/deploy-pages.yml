@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: enable yarn workspaces
+        run: yarn config set workspaces-experimental true
+        
       - name: Restore dependencies
         run: yarn install
 
